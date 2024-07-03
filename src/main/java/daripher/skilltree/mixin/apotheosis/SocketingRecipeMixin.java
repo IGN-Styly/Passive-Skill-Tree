@@ -3,8 +3,8 @@ package daripher.skilltree.mixin.apotheosis;
 import daripher.skilltree.compat.apotheosis.ApotheosisCompatibility;
 import daripher.skilltree.container.ContainerHelper;
 import daripher.skilltree.entity.player.PlayerHelper;
-import dev.shadowsoffire.apotheosis.adventure.affix.socket.SocketHelper;
-import dev.shadowsoffire.apotheosis.adventure.affix.socket.SocketingRecipe;
+import dev.shadowsoffire.apotheosis.adventure.socket.SocketHelper;
+import dev.shadowsoffire.apotheosis.adventure.socket.SocketingRecipe;
 import java.util.List;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
@@ -22,7 +22,7 @@ public class SocketingRecipeMixin {
           @At(
               value = "INVOKE",
               target =
-                  "Ldev/shadowsoffire/apotheosis/adventure/affix/socket/SocketHelper;hasEmptySockets(Lnet/minecraft/world/item/ItemStack;)Z"))
+                  "Ldev/shadowsoffire/apotheosis/adventure/socket/SocketHelper;hasEmptySockets(Lnet/minecraft/world/item/ItemStack;)Z"))
   private boolean checkPlayerSockets(ItemStack stack, Container container, Level level) {
     Player player = ContainerHelper.getViewingPlayer(container);
     if (player == null) return SocketHelper.hasEmptySockets(stack);
